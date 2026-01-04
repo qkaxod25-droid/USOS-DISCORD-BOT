@@ -11,7 +11,7 @@ CHANNEL_ID = int(os.environ['CHANNEL_ID'])
 
 # Gemini 설정
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-3-flash-preview')
 
 # 디스코드 클라이언트 설정
 intents = discord.Intents.default()
@@ -728,5 +728,6 @@ async def on_ready():
     
     # 할 일 다 했으니 봇 종료 (서버 비용 절약)
     await client.close()
+
 
 client.run(DISCORD_TOKEN)
